@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:17-alpine
+    ports:
+      - "5432:5432"
+    # env_file loads every KEY=VALUE line in .env as container env vars.
+    # The postgres image reads POSTGRES_DB/USER/PASSWORD from these to
+    # create the database on first boot.
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+# Named volume: Docker manages the storage location; it survives
+# `docker compose down` (only `docker compose down -v` removes it).
+volumes:
+  pgdata:
