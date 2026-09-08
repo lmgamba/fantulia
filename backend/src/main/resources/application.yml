@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    # Matches docker-compose.yml / .env.example for local dev. Production's
+    # connection string is injected via platform env vars (feature 002),
+    # never committed here.
+    url: jdbc:postgresql://localhost:5432/fantulia_dev
+    username: fantulia
+    password: change-me-locally
+  jpa:
+    hibernate:
+      # Flyway owns the schema; Hibernate only validates entity mappings
+      # against it and never creates/alters tables itself.
+      ddl-auto: validate
+  flyway:
+    enabled: true

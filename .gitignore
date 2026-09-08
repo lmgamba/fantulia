@@ -12,15 +12,13 @@ node_modules/
 
 # Docs, spec and agent-config files stay local-only for now: only source
 # code is tracked at this stage. Revisit once the repo has real content.
-/AGENTS.md
-/CLAUDE.md
-/CLAUDE-CODE-PROMPT.md
+**.md
 docs/
 spec/
 seed/
 
 # Kept even if docs/ tracking is turned back on later: this is the
-# author's private learning map and must never reach the public repo.
+# author's private learning map.
 docs/study/
 
 # READMEs are local-only except the root one, which is the repo's front door.
