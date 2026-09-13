@@ -1,0 +1,51 @@
+name: CI
+
+# Runs on every push to main and on every PR targeting main, so branch
+# protection can require these two jobs to pass before a merge.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+          # Caches ~/.m2 keyed by pom.xml, so dependency downloads aren't
+          # repeated on every run.
+          cache: maven
+
+      # GitHub-hosted runners already have Docker available, which is all
+      # Testcontainers needs to start its own throwaway Postgres per test —
+      # no docker-compose.yml involved here, that's local-dev-only.
+      - run: ./mvnw verify
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      # npm ci (not install): installs exactly what package-lock.json
+      # records, and fails instead of silently updating it.
+      - run: npm ci
+      - run: npx ng lint
+      - run: npx ng build --configuration production
