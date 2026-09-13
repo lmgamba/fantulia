@@ -1,0 +1,16 @@
+/* Global styles. Dark mode is the only mode (no light theme to switch to),
+   so the background/text tokens are applied here once instead of behind a
+   media query or a theme toggle. */
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}

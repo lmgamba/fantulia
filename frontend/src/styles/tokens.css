@@ -1,0 +1,40 @@
+/* Design tokens: tetradic palette (violet primary, lime highlight,
+   red-pink danger) on a neutral dark background. Values copied verbatim
+   from docs/v0.1-spec.md — that file is the source of truth if these
+   ever need to change. Dark mode is the only mode; there is no light
+   theme to also define. */
+:root {
+  /* Neutral dark grey, no purple or blue tint */
+  --bg: #101014; /* near-black, neutral */
+  --bg-elev: #1a1a20; /* cards, question surface */
+  --bg-elev-2: #22222a; /* modals, elevated */
+  --border: #2c2c36;
+  --border-strong: #3d3d48;
+
+  /* Off-white with a faint cool tint so it pairs with the violet accent */
+  --text: #f0eef7; /* primary text */
+  --text-dim: #a8a5b5; /* secondary text */
+  --text-mute: #6b6975; /* placeholders, timestamps */
+
+  /* Primary accent: violet. Everyday brand colour: titles, buttons,
+     focus rings, links, active nav. */
+  --accent: #7c3aed;
+  --accent-strong: #6d28d9; /* hover / pressed */
+  --accent-soft: rgba(124, 58, 237, 0.15);
+  --accent-glow: rgba(124, 58, 237, 0.35);
+
+  /* Highlight: lime. High-signal, USED SPARINGLY. Only:
+     - the level-tag reveal on the result page (big + animated)
+     - the "quiz complete" success state
+     Never for regular buttons, never as text colour on body copy. */
+  --highlight: #abed3a;
+  --highlight-strong: #92cc28;
+  --highlight-soft: rgba(171, 237, 58, 0.12);
+
+  /* Danger: red-pink. Reserved: timeout final second, network error,
+     destructive confirm. Never for a merely wrong-answer state, because
+     the user is not shown whether their pick was right during the quiz. */
+  --danger: #ed3a52;
+  --danger-strong: #c82940;
+  --danger-soft: rgba(237, 58, 82, 0.12);
+}
