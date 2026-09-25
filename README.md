@@ -1,6 +1,6 @@
 # Fantulia
 
-A gamified social network where knowing a fandom is how you find kindred people. This repo is the early scaffold: a Spring Boot API, an Angular app and a local Postgres.
+A personal project in early development: a Spring Boot API, an Angular app and a local Postgres.
 
 Requirements: Java 25, Node LTS, Docker.
 
