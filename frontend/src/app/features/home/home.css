@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.home h1 {
+  color: var(--accent);
+}
+
+.home p {
+  color: var(--text-dim);
+}

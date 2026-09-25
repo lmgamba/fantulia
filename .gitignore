@@ -1,0 +1,29 @@
+# Build artifacts
+target/
+dist/
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+
+# Env / secrets — .env.example documents variable names only
+.env
+
+# Docs, spec and agent-config files stay local-only for now: only source
+# code is tracked at this stage. Revisit once the repo has real content.
+**.md
+docs/
+spec/
+seed/
+
+# Kept even if docs/ tracking is turned back on later: this is the
+# author's private learning map.
+docs/study/
+
+# READMEs are local-only except the root one, which is the repo's front door.
+**/README.md
+!/README.md
+
+# WSL "zone identifier" artifacts left behind by files downloaded on Windows
+*:Zone.Identifier
