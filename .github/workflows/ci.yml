@@ -48,4 +48,6 @@ jobs:
       # records, and fails instead of silently updating it.
       - run: npm ci
       - run: npx ng lint
+      # Vitest + jsdom: no browser needed, so it runs fine on a bare runner.
+      - run: npx ng test --watch=false
       - run: npx ng build --configuration production
