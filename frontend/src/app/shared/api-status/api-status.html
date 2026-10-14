@@ -1,0 +1,10 @@
+<!-- role="status" makes screen readers announce the text when it changes. -->
+<p class="api-status" role="status">
+  @if (health.hasValue()) {
+    API connected
+  } @else if (health.error()) {
+    <span class="api-status-error">Can't reach the API. Reload the page to try again.</span>
+  } @else {
+    Connecting to the API…
+  }
+</p>
