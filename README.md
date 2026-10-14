@@ -23,7 +23,7 @@ cd frontend && npm ci && npm start    # app: http://localhost:4200
 
 ```bash
 cd backend && ./mvnw verify           # unit + integration tests (Testcontainers, needs Docker)
-cd frontend && npm run lint && npm test -- --watch=false && npm run build
+cd frontend && npm run lint && npm test -- --watch=false && npm run test:functions && npm run build
 ```
 
 CI runs the backend `verify`, plus frontend lint, tests and production build, on every pull request.

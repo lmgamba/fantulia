@@ -50,4 +50,7 @@ jobs:
       - run: npx ng lint
       # Vitest + jsdom: no browser needed, so it runs fine on a bare runner.
       - run: npx ng test --watch=false
+      # The /api forwarding function is plain JS outside the Angular build, so it
+      # has its own test step (Node's built-in runner, no extra dependency).
+      - run: npm run test:functions
       - run: npx ng build --configuration production
