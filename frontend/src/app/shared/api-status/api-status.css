@@ -1,0 +1,11 @@
+.api-status {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-dim);
+}
+
+/* --danger passes AA for normal text on --bg (4.8:1) but not on --bg-elev
+   (4.4:1), so this text must stay on the page background. */
+.api-status-error {
+  color: var(--danger);
+}

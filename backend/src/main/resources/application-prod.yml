@@ -1,0 +1,9 @@
+# Loaded only when SPRING_PROFILES_ACTIVE=prod (set in /etc/fantulia/env on the VM).
+# Datasource settings are deliberately not repeated here: SPRING_DATASOURCE_URL,
+# _USERNAME and _PASSWORD from that same file override the local-dev values in
+# application.yml, because OS environment variables outrank config files.
+server:
+  # Caddy runs on the same machine and is the only client, so listen on the
+  # loopback interface only. Even if a firewall rule is ever misconfigured,
+  # port 8080 stays unreachable from the internet.
+  address: 127.0.0.1
