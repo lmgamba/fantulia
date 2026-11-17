@@ -21,7 +21,6 @@
   --accent: #7c3aed;
   --accent-strong: #6d28d9; /* hover / pressed */
   --accent-soft: rgba(124, 58, 237, 0.15);
-  --accent-glow: rgba(124, 58, 237, 0.35);
 
   /* Highlight: lime. High-signal, USED SPARINGLY. Only:
      - the level-tag reveal on the result page (big + animated)
